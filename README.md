@@ -1,2 +1,2 @@
 # iDrink-Arduino
-iDrink Bartender - Original Arduino version
+Electrnoic Bartender - Original Arduino version
