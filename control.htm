@@ -1,0 +1,259 @@
+<html>
+<head>
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <meta http-equiv="CACHE-CONTROL" content="PRIVATE">
+  
+  <title>iDrink Control Panel</title>
+
+</head>
+
+<script>
+		pump1 = "";
+		pump2 = "";
+		pump3 = "";
+		pump4 = "";
+		pump5 = "";
+		pump6 = "";
+		pump7 = "";
+		pump8 = "";
+		
+		function GetiDrinkPumpIO() {
+			nocache = "&nocache=" + Math.random() * 1000000;
+			var request = new XMLHttpRequest();
+			request.onreadystatechange = function(){
+				if (this.readyState == 4) {
+					if (this.status == 200) {
+						if (this.responseXML != null) {
+							// We're not handling data frm server yet
+						}
+					}
+				}
+			}
+			// send HTTP GET request with pumps to switch on/off
+			request.open("GET", "iDrink_pump_control" + pump1 + pump2 + pump3 + pump4 + pump5 + pump6 + pump7 + pump8 + nocache, true);
+			request.send(null);
+			setTimeout('GetiDrinkPumpIO()', 500);		// run repeatedly
+		}
+
+
+		// Functions to handle button clicks
+		function Pump1F(){
+			iDrink_API = "&pump_control";
+			pump1 = "&pump1=F";
+		}
+		function Pump2F() {
+			iDrink_API = "&pump_control";
+			pump2 = "&pump2=F";
+		}
+		function Pump3F(){
+			iDrink_API = "&pump_control";
+			pump3 = "&pump3=F";
+		}
+		function Pump4F() {
+			iDrink_API = "&pump_control";
+			pump4 = "&pump4=F";
+		}
+		function Pump5F(){
+			iDrink_API = "&pump_control";
+			pump5 = "&pump5=F";
+		}
+		function Pump6F() {
+			iDrink_API = "&pump_control";
+			pump6 = "&pump6=F";
+		}
+		function Pump7F(){
+			iDrink_API = "&pump_control";
+			pump7 = "&pump7=F";
+		}
+		function Pump8F() {
+			iDrink_API = "&pump_control";
+			pump8 = "&pump8=F";
+		}
+
+
+		function Pump1R(){
+			iDrink_API = "&pump_control";
+			pump1 = "&pump1=R";
+		}
+		function Pump2R() {
+			iDrink_API = "&pump_control";
+			pump2 = "&pump2=R";
+		}
+		function Pump3R(){
+			iDrink_API = "&pump_control";
+			pump3 = "&pump3=R";
+		}
+		function Pump4R() {
+			iDrink_API = "&pump_control";
+			pump4 = "&pump4=R";
+		}
+		function Pump5R(){
+			iDrink_API = "&pump_control";
+			pump5 = "&pump5=R";
+		}
+		function Pump6R() {
+			iDrink_API = "&pump_control";
+			pump6 = "&pump6=R";
+		}
+		function Pump7R(){
+			iDrink_API = "&pump_control";
+			pump7 = "&pump7=R";
+		}
+		function Pump8R() {
+			iDrink_API = "&pump_control";
+			pump8 = "&pump8=R";
+		}
+
+
+		function Pump1S(){
+			iDrink_API = "&pump_control";
+			pump1 = "&pump1=S";
+		}
+		function Pump2S() {
+			iDrink_API = "&pump_control";
+			pump2 = "&pump2=S";
+		}
+		function Pump3S(){
+			iDrink_API = "&pump_control";
+			pump3 = "&pump3=S";
+		}
+		function Pump4S() {
+			iDrink_API = "&pump_control";
+			pump4 = "&pump4=S";
+		}
+		function Pump5S(){
+			iDrink_API = "&pump_control";
+			pump5 = "&pump5=S";
+		}
+		function Pump6S() {
+			iDrink_API = "&pump_control";
+			pump6 = "&pump6=S";
+		}
+		function Pump7S(){
+			iDrink_API = "&pump_control";
+			pump7 = "&pump7=S";
+		}
+		function Pump8S() {
+			iDrink_API = "&pump_control";
+			pump8 = "&pump8=S";
+		}
+		
+		// FUNCTIONS TO CONTROL ALL PUMPS AT ONCE
+		function PumpAllF(){
+			iDrink_API = "&pump_control";
+			pump1 = "&pump1=F";
+			pump2 = "&pump2=F";
+			pump3 = "&pump3=F";
+			pump4 = "&pump4=F";
+			pump5 = "&pump5=F";
+			pump6 = "&pump6=F";
+			pump7 = "&pump7=F";
+			pump8 = "&pump8=F";
+		}
+		function PumpAllR(){
+			iDrink_API = "&pump_control";
+			pump1 = "&pump1=R";
+			pump2 = "&pump2=R";
+			pump3 = "&pump3=R";
+			pump4 = "&pump4=R";
+			pump5 = "&pump5=R";
+			pump6 = "&pump6=R";
+			pump7 = "&pump7=R";
+			pump8 = "&pump8=R";
+		}
+		function PumpAllS(){
+			iDrink_API = "&pump_control";
+			pump1 = "&pump1=S";
+			pump2 = "&pump2=S";
+			pump3 = "&pump3=S";
+			pump4 = "&pump4=S";
+			pump5 = "&pump5=S";
+			pump6 = "&pump6=S";
+			pump7 = "&pump7=S";
+			pump8 = "&pump8=S";
+		}
+</script>
+
+<body onload="GetiDrinkPumpIO()">
+	
+<noscript>Your browser does not support JavaScript!</noscript>
+
+<div style="text-align: center; font-family: Arial ;">
+<h1>iDrink Control Panel</h1>
+
+<table style="text-align: left; width: 875px; margin-left: auto; margin-right: auto; height: 33px;" border="0" cellpadding="2" cellspacing="2">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top; text-align: center;"><big><big>1<br></big></big></td>
+      <td style="vertical-align: top; text-align: center;"><big><big>2<br></big></big></td>
+      <td style="vertical-align: top; text-align: center;"><big><big>3<br></big></big></td>
+      <td style="vertical-align: top; text-align: center;"><big><big>4<br></big></big></td>
+      <td style="vertical-align: top; text-align: center;"><big><big>5<br></big></big></td>
+      <td style="vertical-align: top; text-align: center;"><big><big>6<br></big></big></td>
+      <td style="vertical-align: top; text-align: center;"><big><big>7<br></big></big></td>
+      <td style="vertical-align: top; text-align: center;"><big><big>8<br></big></big></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div style="text-align: center;">
+	<input name="iDrinkAPI" onclick="Pump1F()" alt="" src="f-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump2F()" alt="" src="f-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump3F()" alt="" src="f-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump4F()" alt="" src="f-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump5F()" alt="" src="f-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump6F()" alt="" src="f-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump7F()" alt="" src="f-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump8F()" alt="" src="f-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	&nbsp; 	
+</div>
+	
+<div style="text-align: center;">
+	<input name="iDrinkAPI" onclick="Pump1R()" alt="" src="r-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump2R()" alt="" src="r-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump3R()" alt="" src="r-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump4R()" alt="" src="r-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump5R()" alt="" src="r-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump6R()" alt="" src="r-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump7R()" alt="" src="r-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump8R()" alt="" src="r-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	&nbsp;
+</div>
+		
+<div style="text-align: center;">
+	<input name="iDrinkAPI" onclick="Pump1S()" alt="" src="s-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump2S()" alt="" src="s-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump3S()" alt="" src="s-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump4S()" alt="" src="s-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump5S()" alt="" src="s-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump6S()" alt="" src="s-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump7S()" alt="" src="s-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	<input name="iDrinkAPI" onclick="Pump8S()" alt="" src="s-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75">
+	&nbsp;
+	&nbsp; 
+</div>
+
+<div style="text-align: center; font-family: Arial ;">
+<div style="text-align: center;"> </div>
+<table
+style="text-align: left; width: 393px; height: 119px; margin-left: auto; margin-right: auto;"border="2" cellpadding="2" cellspacing="2">
+<tbody>
+<tr>
+<td style="vertical-align: middle; text-align: center;"><bigstyle="font-family: Arial ;"><big><big>ALL</big></big><br>
+</td>
+<td style="vertical-align: top; text-align: center;">
+	<input name="iDrinkAPI" onclick="PumpAllF()" alt="" src="f-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75"></td>
+<td style="vertical-align: top; text-align: center;">
+	<input name="iDrinkAPI" onclick="PumpAllR()" alt="" src="r-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75"></td>
+<td style="vertical-align: top; text-align: center;">
+	<input name="iDrinkAPI" onclick="PumpAllS()" alt="" src="s-button.jpg" type="image" height="75" hspace="15" vspace="15" width="75"></td>
+</tr>
+</tbody>
+</table>
+&nbsp;&nbsp;&nbsp;<br>
+</div>
+
+</body>
+</html>

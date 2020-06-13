@@ -1,0 +1,84 @@
+<html>
+<head>
+  
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <meta http-equiv="CACHE-CONTROL" content="PRIVATE">
+  
+  <title>iDrink Main Menu</title>
+
+</head>
+
+<script>
+
+		recipe = "";		//Name of the recipe chosen
+		recipeClicked = "";	//recipe placeholder variable
+		
+		
+		function GetiDrinkRecipe() {
+			nocache = "&nocache=" + Math.random() * 1000000;
+			var request = new XMLHttpRequest();
+			request.onreadystatechange = function(){
+				if (this.readyState == 4) {
+					if (this.status == 200) {
+						if (this.responseXML != null) {
+							// We're not handling data frm server yet
+						}
+					}
+				}
+			}
+			// send HTTP GET request to pour recipe
+			request.open("GET", "iDrink_pour_recipe" + recipe + nocache, true);
+			request.send(null);
+			
+			recipe = "";			// Only pour the recipe ONCE !
+			
+			setTimeout('GetiDrinkRecipe()', 1000);		// run repeatedly
+		}
+
+		//function to pour drink recipes
+		function Pour(recipeClicked){
+			recipe = "&recipe=" + "*" + recipeClicked + ".";	// put the recipe name between "* and "." so it's easier to parse on server
+		}
+		
+	</script>
+
+<body onload="GetiDrinkRecipe()">
+	
+<noscript>Your browser does not support JavaScript!</noscript>
+
+<div style="text-align:center;">
+<h1 style="font-family: Arial; font-weight: bold; color: rgb(102, 102, 102);"><big>iDrink</big></h1>
+<h2 style="font-style: italic; color: rgb(102, 102, 102);"><span style="font-family: Calibri;">What can I make for you?</span></h2>
+
+
+<img style="width: 358px; height: 242px;" alt="drink 1" src="drink1.jpg">
+<br>
+<br>
+
+<button type="Button" style="height:30px;width:160px;" onclick="Pour('VODKA_POMEGRANATE')">Vodka Pomegranate</button>
+<button type="Button" style="height:30px;width:160px;" onclick="Pour('TEQUILA_POMEGRANATE')">Tequila Pomegranate</button>
+<button type="Button" style="height:30px;width:160px;" onclick="Pour('VODKA_SHOT')">Vodka Shot</button>
+<button type="Button" style="height:30px;width:160px;" onclick="Pour('TEQUILA_SHOT')">Tequila Shot</button>
+<button type="Button" style="height:30px;width:160px;" onclick="Pour('SCREWDRIVER')">Screwdriver</button>
+<br>
+<br>
+<button type="Button" style="height:30px;width:160px;" onclick="Pour('GREYHOUND')">Greyhound</button>
+<button type="Button" style="height:30px;width:160px;" onclick="Pour('TEQUILA_SUNRISE')">Tequila Sunrise</button>
+<button type="Button" style="height:30px;width:160px;" onclick="Pour('SKINNY_MARGARITA')">Skinny Margarita</button>
+<button type="Button" style="height:30px;width:160px;" onclick="Pour('RUM_PINEAPPLE')">Rum Pineapple</button>
+<button type="Button" style="height:30px;width:160px;" onclick="Pour('RUM_PUNCH')">Rum Punch</button>
+<br>
+<br>
+<button type="Button" style="height:30px;width:160px;" onclick="Pour('MENLO_PARK_ICED_TEA')">Menlo Park Iced Tea</button>
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div style="text-align: right;">
+	<a href="control.htm"><img style="border: 0px solid ; width: 33px; height: 33px;" alt="" src="gear.jpg"></a><br>
+</div>
+
+</body></html>
